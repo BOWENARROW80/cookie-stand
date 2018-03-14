@@ -1,21 +1,29 @@
-* {
-    background-color:salmon;
-  }
-  
-  h1, h2, h3 {
-   font-family: sans-serif
-    color: rgb(0, 2, 128);
-  }
-    
-  }
-  
-  img {
-    border-radius: 400px;
-    border-style: solid;
-  
-  }
-  
-  .module {
-    cursor: url(cursor:(http://www.rw-designer.com/cursor-extern.php?id=69328);
+body {
+  background: salmon;
 }
-  
+
+h1, h2, h3 {
+	test-align: center;
+
+}
+
+a{
+	font-size: 30px;
+	margin: 20px 40px;
+}
+
+ul{
+	font-size: 18px;
+}
+
+table, th, td {
+	border: 1px solid rgb(0, 0, 0);
+	border-collapse: collapse;
+}
+th, td {
+	padding: 15px;
+	text-align: left;
+}
+
+
+
