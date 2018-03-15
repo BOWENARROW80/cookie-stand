@@ -1,4 +1,114 @@
-body {
+
+a {
+	background: salmon;
+  }
+  
+{
+	box-sizing: border-box;
+	
+}
+
+  header {
+	width: 100%;
+	background: #b3cccc;
+	font-family: 'Indie Flower', cursive;
+	text-align: center;
+	height: 200px;
+  }
+  h1, h2, h3 {
+	  test-align: center;
+  
+  }
+  
+  a{
+	  font-size: 30px;
+	  margin: 20px 40px;
+  }
+  
+  ul{
+	  font-size: 18px;
+  }
+  
+  table, th, td {
+	  border: 1px solid rgb(0, 0, 0);
+	  border-collapse: collapse;
+  }
+  th, td {
+	  padding: 15px;
+	  text-align: left;
+  }
+  
+  fieldset {
+	margin: 10px;
+  }
+  
+  input {
+	padding: 5px 10px;
+	margin-left: 5px;
+  }
+  
+  form fieldset:first-child {
+	margin-left: 280px;
+  }
+  
+  form fieldset:nth-child(2) {
+	margin-left: 90px;
+  }
+  
+  form fieldset:nth-child(3) {
+	margin-left: 88px;
+  }
+  
+  button {
+	margin-left: 40%;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	background: #b3cccc;
+	font-size: 20px;
+	border-radius: 6px;
+  }
+  
+  table {
+	margin: 10px auto;
+  }
+  
+  td {
+	border: 1px black solid;
+	padding: 10px 10px 5px 5px;
+  }
+  
+  tbody td {
+	text-align: right;
+  }
+  
+  tbody td:first-child {
+	text-align: left;
+  }
+  
+  tfoot td {
+	text-align: right;
+  }
+  
+  tfoot td:first-child {
+	text-align: left;
+  }
+  
+  thead td {
+	background: #999;
+  }
+  
+  thead td:first-child {
+	background: #fff;
+  }
+  
+  footer {
+	width: 100%;
+	height: 175px;
+	background: #b3cccc;
+	clear: both;
+  }
+
+/* body {
   background: salmon;
 }
 
@@ -23,7 +133,4 @@ table, th, td {
 th, td {
 	padding: 15px;
 	text-align: left;
-}
-
-
-
+} */
