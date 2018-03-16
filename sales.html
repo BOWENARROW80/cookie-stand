@@ -1,179 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
+    <title>Sales Page</title>
     <link rel="../stylesheet" href="../style.css">
     <link rel="../stylesheet" href="../reset.css">
-  </head>
-  
-  <body>
-      <form id="cookie form">
-      <fieldset>
-        <legend>New locations</legend>
-    <label for= "location"></label>
-    <input type="Location" name-"location">
+</head>
+
+<body>
+    <main>
+        <h1>Pat's Salmon cookies</h1>
+
+        <h2>Fishing for the right numbers</h2>
+        <table id='cookies'></table>
+        <form id="storeForm">
+            <fieldset>
+                <legend>New locations</legend>
+                <label for="location"></label>
+                <input name="location">
+
+                <label for="custMini">Name:</label>
+                <input name="minCust">
+
+                <label for="custeMaxi">Name:</label>
+                <input name="maxCust">
+
+                <label for="aveCookieSale">Name:</label>
+                <input name="avgSales">
+
+                <button type="submit">Add a Location</button>
             </fieldset>
-    
-    <label for= "custMini">Name:</label>
-    <input type="Minimum Customer" name-"custMini">
-          </fieldset>
-    
-    <label for= "custeMaxi">Name:</label>
-    <input type="Maximum Customer" name-"custMini">
-        </fieldset>
-    
-    <label for= "aveCookieSale">Name:</label>
-    <input type="Average Cookie Sales" name-"AveCookieSale">
-        </fieldset>
-      
-      </form>
-      <section id="data"></section>
-    </body>
-    </html>
 
+            <table class="" id="cookies">
+                <tr>
+                    <th></th>
+                    <th>6am</th>
+                    <th>7am</th>
+                    <th>8am</th>
+                    <th>9am</th>
+                    <th>10am</th>
+                    <th>11am</th>
+                    <th>12pm</th>
+                    <th>1pm</th>
+                    <th>2pm</th>
+                    <th>3pm</th>
+                    <th>4pm</th>
+                    <th>5pm</th>
+                    <th>6pm</th>
+                    <th>7pm</th>
+                    <th>Daily Total</th>
 
+                </tr>
+                <tr>
+                    <td>1st and Pike</td>
 
+                </tr>
+                <tr>
+                    <td>SeaTac Airport</td>
+                    
+                </tr>
+                <tr>
+                    <td>Seattle Center</td>
+                   
+                </tr>
+                <tr>
+                    <td>Capitol Hill</td>
+            
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Alki</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>totals</td>
+                   
+                </tr>
+            </table>
+        </form>
 
-
-
-      <table>
-          <td id="store_head"></td>
-          <tb id="store_table"></tb>
-          <tf id="store_foot"></tf>
-        </table>
-        <script src='app.js'></script>
-        </body>
-
-        
-
-    <button id='sub_btn" type="submit>Add store</button>
-
-
-        
-
-
-    <!-- <a href="../index.html'=>home/a> -->
-
-   <h1>Pat's Salmon cookies</h1>
-      
-
-      <div class="salesList'>
-          <h2>1st and Pike</h2>
-          <h3>Sales Figures</h3>
-         <ul id="hourlyTotalPike" ></ul>
-          </div>
-
-    
-      <div class="salesList'>
-        <h3>Seatac Airport</h3>
-        <h3>Sales Figures</h3>
-        <ul id="hourlyTotalSeatac" ></ul>
-      </div>
-
-      <div class="salesList'>
-        <h3>Seattle Center</h3>
-        <h3>Sales Figures</h3>
-        <ul id="hourlyTotalSeaCEN" ></ul>
-      </div>
-
-      <div class="salesList'>
-          <h3>Capitol Hill</h3>
-          <h3>Sales Figures</h3>
-          <ul id="hourlyTotalCapHill" ></ul>
-        </div>
-
-        <div class="salesList'>
-            <h3>Alki</h3>
-            <h3>Sales Figures</h3>
-            <ul id="hourlyTotalAlki" ></ul>
-          </div>
-
-      
-
-    <h2>Fishing for the right numbers</h2>
-
-
-
-
-
-        <tr>
-            <th>Store</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        <tr>
-            <td></td>
-            <td>6am</td>
-            <td>7am</td>
-            <td>8am</td>
-            <td>9am</td>
-            <td>10am</td>
-            <td>11am</td>
-            <td>12pm</td>
-            <td>1pm</td>
-            <td>2pm</td>
-            <td>3pm</td>
-            <td>4pm</td>
-            <td>5pm</td>
-            <td>6pm</td>
-            <td>7pm</td>
-            <td>Daily Total</td>
-          </tr>
-
-     
-      <p></p>
-      <tr>
-        <td>1st & Pike</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Seatac Airport</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Seattle Center</td>
-        <td></td>
-        <td> </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Capitol Hill</td>
-        <td></td>
-        <td>-</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Alki</td>
-        <td> </td>
-        <td> </td>
-        <td></td>
-      </tr>
-      <tr>
-      
-        <td></td>
-      </tr>
-     
-    </table>
-
-    
-
-    </form>
-
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-
-
-    </fieldset>
-
-    </form>
-
-    <h2>Those are rookie numbers, time to get them up up up!!</h2>
-
-    <table id="cookie"></table> -->
-
-  </body>
+        <h2>Those are rookie numbers, time to get them up up up!!</h2>
+    </main>
+<script src="js/app.js"></script>
+</body>
+<!-- <a href="../index.html' -->
+</html>
  
-  </html> -->

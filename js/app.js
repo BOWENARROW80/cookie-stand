@@ -1,258 +1,182 @@
 'use strict';
 
+var grantTotal = [];
 
- var StoreArray = []
+var openHours = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
 
- var storeTable = document.getElementById('Store')
+var cookieStoreTable = document.getElementById('Cookies');
+var cookieForm = document.getElementById('storeForm');
 
- var openHours = [6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8];
-   var header = FUNCTION () {
+function Locations (location, custMini, custMaxi, aveCookieSale) {
+  this.location = location;
+  this.mini = custMini;
+  this.Maxi = custMaxi;
+  this.aveCookieSale = aveCookieSale;
+  this.hourlySales = [];
 
-    var trElement = document.createElement('tr'):
-    var tdElement = document.createElement('td');
+  this.calculateHourlySales();
+  this.addTotalCookiesPerHr();
+  this.totalCookie();
 
-    trElement.textContent = 'Store';
-    thElement.appendChild(trElement);
-
-    for (var i = 0; i < OpenHours.length; i++) {
-
-      theElement = document.createElement('th')
-
-      tdElement.textContent = openHours[i];
-
-      trElement.appendChild(tdElement);
-
-      {
-        tdElement = document.createElement('td');
-        tdElement.textContent = 'Day Total';
-        trElement.appendChild(tdElement);
-      }
-      }
-
-  header();
-
-  function StoreConstructor(location, custMini, custMaxi, aveCookieSale) {
-    this.location = location;
-    this.mini = custMini;
-    this.Maxi = custMaxi;
-    this.aveCookieSale = aveCookieSale;
-    this.hourlySales =[]
-    this.totalDailySales = 0;
-    storeArray.push(this); //pushes the THIS items into the array.  The StoreArray is connected from the top of the coding chain
- 
-
-   }
-
-
- StoreConstructor.prototype.render = function () {
-
-    //create tr
-    var trElement = document.createElement('tr');
-    //create td
-    var tdElement = document.createElement('td');
-    //give content name
-    tdElement.textContent = this.location;
-    //append td to tr
-    trElement.appendChild(tdElement);
-  
-    for (var i = 0; i < hourlySales.length; i++) 
-    tdElement = document.createElement('td');
-    tdElement.textContent = this.totalDailySales[i];
-    trElement.appendChild(tdElement);
-
- }
-
- 
- StoreConstructor.prototype.storeSalesPerHr = function () {
-   
-  var totalDailySales = 0;
-  for (var i = 0; i < OpenHours.length; i++) {
-
-    var cusRadoNum= Math.random() * (this.custMaxi - this.custMini) + (this.custMini);
-
-    var hourlySales = (Math.floor(cusRanoNum * this.aveSale));
-
-    dayTotal += hourlySales;
-
-    this.hourlySales.push(totalDailySales);
-
-    this.hourlySales = totalDailySales;
-
+  // Locations.push(this);
 }
 
- tdElement = document.createElement('td');
- tdElement.textContent = this.totalSales
- trElement.appendChild(tdElement);
-
- storeTable.appendChild(trElement);
+Locations.prototype.custNumPerHr = function() {
+  return Math.floor(Math.random() * ((this.maxCustPerHr - this.minCustPerHr) + 1) + this.minCustPerHr);
 
 };
 
-//Array for locations
-var pike = New StoreConstructor[23, 65, 6.3. '1st and Pike'];
-pike.salesPerHr();
-pike.render();
+Locations.prototype.aveCookiePerCust = function() {  
+  return Math.round(this.aveCookieSale * this.custNumPerHr());
 
-var Setac = New StoreConstructor[3, 24, 1.2 'SeaTac Airport'];
-seatac.salesPerHr();
-seatac.render();
+};
 
-var SeaCenter = New StoreConstructor[11, 38. 3.7. 'Seattle Center'];
-SeaCenter.salesPerHr();
-SeaCenter.render();
+Locations.prototype.calculateHourlySales = function() {
+  for (var i = 0; i < this.hourlySales.length; i++) {
+    this.hourlyCookieSales.push(this.aveCookiePercust());
+  }
+};
 
-var CapitolHill = New StoreConstructor[20, 38, 2.3. 'Capitol Hill'];
-pike.salesPerHr();
-pike.render();
-
-var Alki = New StoreConstructor[2, 16, 4.6,. 'Alki'];
-Alki.salesPerHr();
-Alki.render();
-
-//SINGLE FUNCION THAT RENDER ALL OF THE INDIVIDUAL ROWS
-function renderaAllCookies() {
-  for(var i in allCookies) {
-    allCookies[i].render();
+Locations.prototype.totalCookie = function() {
+  var total = 0
+  for (var i =0;i< this.hourlySales.length;i++) {
+    total=total + this.hourlyCookieSales[i];
   }
 
-}
+  grantTotal.push(total);
 
-// event listener's callback function
-function addNewCookie(event){
-  //EVENT RETURNS AN OBJECT
+  return total;
+};
+
+Locations.prototype.addTotalCookiesPerHr = function() {
+  for (var i = 0; i < this.hourlySales.length; i++) {
+    this.hourlySales[i] = this.hourlySales[i] + this.hourlySales[i];
+
+  }
+};
+
+cookieForm.addEventListener('submit', addNewLocation);
+
+function addNewLocation(event){
   event.preventDefault();
-  console.log(event.target.pikeLocation.value);
 
-  /////change these to the cookie vice dog
-  var newLocation= event.target.location.value;
-  var newCustMin = event.target.miniCust.value;
-  var newCustMax= event.target.MaxCust.value;
-  var newAveCookSale = event.target.AvgCookieSale.value
+  console.log(event.target);
 
+  var newLocation = event.target.location.value;
+  var newCustMini = event.target.minCust.value;
+  var newCustMaxi = event.target.maxCust.value;
+  var newAveCookieSale = event.target.avgSales.value;
 
-// // new Dog(newName, newColor, newBreed, newNickname); ///same order as previousl
-///location, custMini, custMaxi, aveCookieSale
-dogTable.innerHTML = '';
-makeHeaderRow();
-renderaAllCookies();
+  // makeHeaderRow();
+  // renderaAllCookies();
+  // makeFooterRow();
 }
 
-
-// // add event lstener
-// cookieForm.addEventListener('submit', addNewCookie);
-
-// // //Erases everything and moves footer then re-adds everything including new item added
-// // dogTable.innerHTML = ''; //now header is missing
-
+function makeHeaderRow() {
+  var trElement = document.createElement('tr');
+  var tdElement = document.createElement('td');
+  var thElement = document.createElement('th');
+  var myTable = document.getElementById('cookies');
 
 
-// <form id="cookie form">
-// <fieldset>
-// <legend>Add a new location</legend>
+  // thElement.textContent = 'HI THERE';
+  // myTable.appendChild(thElement);
 
-// <label for= "cookie-name">:</label>
-// <input type="text" name-"cookie-name">
+  for (var i = 0; i < openHours.length; i++) {
+    thElement = document.createElement('th')
+    tdElement.textContent = openHours[i];
+    trElement.appendChild(thElement);
+  }
+  thElement = document.createElement('th');
+  thElement.textContent = 'Daily Location Total';
+  trElement.appendChild(thElement);
+  cookieStoreTable.appendChild(trElement);
 
-// <label for= "cookie-name">Name:</label>
-// <input type="text" name-"cookie-name">
+}
 
-// <label for= "cookie-name">Name:</label>
-// <input type="text" name-"cookie-name">
+var grantTotals = function() {
+  var total = 0;
+  for (var i = 0; i < grantTotal.length; i++) {
+    total = total + grantTotal[i];
 
-// <label for= "cookie-name">Name:</label>
-// <input type="text" name-"cookie-name">
+    return total;
 
-// <button>Add a Store</button>
+  };
 
-// </fieldset>
+  Location.prototype.render = function() {
+    var trElement = document.createElement('tr');
+    var tdElement = document.createElement('td');
+    tdElement.textContent = this.location;
+    trElement.appendChild(tdElement);
+  }
 
-// </form>
+  for (var i = 0; i < this.hourlySales.length; i++) {
+    tdElement = document.createElement('td');
+    tdElement.textContent = this.hourlySales[i];
+    trElement.appendChild(tdElement);
+  }
 
-// <textarea name="" id="" cols="30" rows="10"></textarea>
+  tdElement = document.createElement('td');
+  tdElement.textContent = this.totalCookie();
+  trElement.appendChild(tdElement);
 
+  cookieStoreTable.appendChild(trElement);
 
-// </fieldset>
+  new Locations('first & Pike', 23, 65, 6.3);
+  new Locations('Seatac Airport', 3, 24, 1.2);
+  new Location('Seattle Center', 11, 38, 3.7);
+  new Location('Capitol Hill', 20, 38, 2.3);
+  new Location('Alki', 2, 16, 4.6);
 
-// </form>
+  function makeHeaderRow() {
+    var trEl = document.createElement('tr');
+    var thEL = document.createElement('th');
+    thEl.textContent = '';
+    trEl.appendChild(thElement);
+    for (var i = 0; i < openHours.length; i++) {
+      thEl = document.createElement('th')
+      thEl.textContent = openHours[i];
+      trEl.appendChild(thEl);
+    }
+    thEl = document.createElement('th');
+    thEl.textContent = 'Daily Location Total';
+    teEl.appendChild(thEl);
+    cookieStoreTable.appendChild(trEl);
 
+  }
 
+  function makeFooterRow() {
+    var trEL = document.createElement('tr');
+    var tdEl = document.createElement('td');
+    tdEl.textContent = '';
+    trEl.appendChild(tdEl);
 
-// <table id="cookie"></table>
+    for (var i = 0; i < hours.length; i++)
+      tdEl = document.createElement('td');
+    tdEl.textContent = hours[i];
+    trEl.appendChild(tdEl);
 
-// <tr>
-//             <th>Store</th>
-//             <th></th>
-//             <th></th>
-//             <th></th>
-//           </tr>
-//         <tr>
-//             <td></td>
-//             <td>6am</td>
-//             <td>7am</td>
-//             <td>8am</td>
-//             <td>9am</td>
-//             <td>10am</td>
-//             <td>11am</td>
-//             <td>12pm</td>
-//             <td>1pm</td>
-//             <td>2pm</td>
-//             <td>3pm</td>
-//             <td>4pm</td>
-//             <td>5pm</td>
-//             <td>6pm</td>
-//             <td>7pm</td>
-//             <td>Daily Total</td>
-//           </tr>
+    tdEl = document.createElement('td');
+    tdEl.textContent = "daily Location Total";
+    trEl.appendChild(trEl);
+    cookieStoreTable.appendChild(TrEl);
 
-     
-//       <p></p>
-//       <tr>
-//         <td>1st & Pike</td>
-//         <td></td>
-//         <td></td>
-//         <td></td>
-//       </tr>
-//       <tr>
-//         <td>Seatac Airport</td>
-//         <td></td>
-//         <td></td>
-//         <td></td>
-//       </tr>
-//       <tr>
-//         <td>Seattle Center</td>
-//         <td></td>
-//         <td> </td>
-//         <td></td>
-//       </tr>
-//       <tr>
-//         <td>Capitol Hill</td>
-//         <td></td>
-//         <td>-</td>
-//         <td></td>
-//       </tr>
-//       <tr>
-//         <td>Alki</td>
-//         <td> </td>
-//         <td> </td>
-//         <td></td>
-//       </tr>
-//       <tr>
-      
-//         <td></td>
-//       </tr>
-     
-//     </table>
+    cookieStoreTable.appendChild(TrEl);
+  }
+
+  function renderaAllCookies() {
+    for (var i =0; i<allLocations.length;i++) {
+      allCookies[i].render();
+      console.log(allCookies)
+    }
+
+  }
 
 
 
+  cookieForm.addEventListener('submit', addNewLocation);
 
-
-
-
-
-
-
-
-
-
-
+  makeHeaderRow();
+  makeFooterRow();
+  // renderAllLocations();
+};
