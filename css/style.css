@@ -1,7 +1,87 @@
 body {
 	background: rgb(106, 106, 233);
+
   }
-  
+
+.fish {
+	position: relative;
+	text-align: center;
+
+}
+.centered {
+	position: center;
+	text-align: center;
+	top: 20%;
+	left: 50%;
+}
+
+h1 {
+	text-align: center;
+}
+
+div#places {
+	color: red;
+	font-family: cursive;
+
+}
+
+
+.fcenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-image: rgb(106, 106, 223);
+
+}
+
+.center-div
+{
+     margin: 0 auto;
+     width: 100px; 
+}
+
+
+img {
+	border-radius: 50%;
+}
+
+
+
+
+h1 {
+		text-align: center;
+}
+
+#cut {
+	    position: right;
+		height: 150px;
+		width: 150px;
+	  }
+}
+
+#family {
+	float: right;
+	height: 300px; 
+	width: 400px  */
+}
+ 
+.myList, ul, li {
+    list-style-type: none
+}
+
+ul {
+    float: left,
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+
+
   h1, h2, h3 {
 	  test-align: center;
   
@@ -16,6 +96,14 @@ body {
 	  font-size: 18px;
   }
   
+  table {
+
+	background-color: palegreen;
+	margin-bottom: 4em;
+	text-align: center;
+
+
+  }
  
   table,th, td {
 	  padding: 15px;
@@ -38,39 +126,3 @@ body {
 		  padding:.5em 1.5em;
 	  }
 	  
-	  table.excel tr:nth-child(odd) {
-		  background: #f5f5f5;
-	  }
-	  
-	  /* The hover state for all "tr's" that are not the first one */
-	  table.excel tr:not(:first-child):hover {
-		  background: #000;
-		  color: #fff;
-	  }
-	  
-	  table.excel td {
-		  border: 1px solid #ccc;
-		  padding: .5rem 1.5rem;
-	  }
-	  
-	  table.modern {
-		  background:#fff;
-	  }
-	  table.modern th {
-		  border-bottom: 2px solid #66ccff;
-	  }
-	  
-	  table.modern td {
-		  border-bottom: 1px solid #cceeff;
-		  /* Adding some space between columns for visual space */
-		  border-right: 2em solid #fff; 
-		  border-left: 2em solid #fff; 
-	  }
-	  
-	  .card.media-left figure {
-		float:left;
-		margin:1em;
-		width:45%;
-		
-	}
-
